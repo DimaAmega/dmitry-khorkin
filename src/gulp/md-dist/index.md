@@ -8,7 +8,11 @@
   </head>
   <body>
 
-  {{> ./templates/body.md }}
+  # My personal website! (DH)
+
+  * One
+  * Two
+  * Three
 
   <script src="bundle.js"></script>
   </body>

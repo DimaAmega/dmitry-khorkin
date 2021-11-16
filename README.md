@@ -1,2 +1,0 @@
-# dmitry-khorkin
-personal website

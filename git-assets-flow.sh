@@ -9,10 +9,11 @@ fi
 
 NODE_ENV=production npm run gulp-assets
 git checkout gh-pages
+# rm all files
 ls | grep -v dist | xargs rm -rf
-cp dist/* .
-rm -rf dist
-git add .
-git commit -m "$1"
-git checkout main
-npm i
+# copy dist
+cp dist/* . && rm -rf dist
+# create commit
+git add . && git commit -m "$1"
+# return back
+git checkout main && npm i

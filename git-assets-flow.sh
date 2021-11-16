@@ -13,7 +13,7 @@ git checkout gh-pages
 ls | grep -v dist | xargs rm -rf
 # copy dist
 cp dist/* . && rm -rf dist
-# create commit
-git add . && git commit -m "$1"
+# create commit and push
+git add . && git commit -m "$1" && git push
 # return back
 git checkout main && npm i

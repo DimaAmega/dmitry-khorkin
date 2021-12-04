@@ -7,14 +7,15 @@ const Combine = require("stream-combiner2").obj;
 const webpack = require("webpack-stream");
 const miniCssExtractPlugin = require("mini-css-extract-plugin");
 
-const [PATH_TO_DATA, PATH_TO_DEST, MODE] = [
-  "../data",
-  "../../dist",
+const [PATH_TO_DATA, PATH_TO_DEST, MD_DIST, MODE] = [
+  "../src/data",
+  "../dist",
+  "../md-dist",
   process.env.NODE_ENV ? process.env.NODE_ENV : "development",
 ];
 
 function markdownToHtml(cb) {
-  const pipeline = [src(`./md-dist/*.md`), markdown2html(), prettier()];
+  const pipeline = [src(`${MD_DIST}/*.md`), markdown2html(), prettier()];
 
   Combine(pipeline).pipe(dest(PATH_TO_DEST)).on("end", cb);
 }
@@ -26,7 +27,7 @@ function renderMarkdown(cb) {
     rename((p) => (p.extname = ".md")),
   ];
 
-  Combine(pipeline).pipe(dest("./md-dist")).on("end", cb);
+  Combine(pipeline).pipe(dest(MD_DIST)).on("end", cb);
 }
 
 function jscss(cb) {

@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"no test here\"",
-    "gulp-assets": "gulp --gulpfile ./src/gulp/gulpfile.js",
-    "clear": "rm -rf ./src/gulp/md-dist dist"
+    "gulp-assets": "gulp --gulpfile ./gulp/gulpfile.js",
+    "clear": "rm -rf md-dist dist"
   },
   "repository": {
     "type": "git",

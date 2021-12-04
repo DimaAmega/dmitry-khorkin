@@ -6,13 +6,14 @@ const prettier = require("gulp-prettier");
 const rename = require("gulp-rename");
 const Combine = require("stream-combiner2").obj;
 const webpack = require("webpack-stream");
-const miniCssExtractPlugin = require("mini-css-extract-plugin");
+const cleanCSS = require("gulp-clean-css");
 
-const [PATH_TO_DATA, PATH_TO_DIST, MD_DIST, IMAGES_FOLDER, MODE] = [
+const [PATH_TO_DATA, PATH_TO_DIST, MD_DIST, IMAGES_FOLDER, COMMON, MODE] = [
   "../src/data",
   "../dist",
   "../md-dist",
   "images",
+  "common",
   process.env.NODE_ENV ? process.env.NODE_ENV : "development",
 ];
 
@@ -32,22 +33,21 @@ function renderMarkdown(cb) {
   Combine(pipeline).pipe(dest(MD_DIST)).on("end", cb);
 }
 
-function jscss(cb) {
+function js(cb) {
   const pipeline = [
     src(`${PATH_TO_DATA}/static/js/main.js`),
-    webpack({
-      mode: MODE,
-      plugins: [new miniCssExtractPlugin()],
-      module: {
-        rules: [
-          {
-            test: /\.css$/,
-            use: ["style-loader", "css-loader"],
-          },
-        ],
-      },
-    }),
-    rename((p) => (p.basename = "bundle")),
+    webpack({ mode: MODE }),
+    rename((p) => (p.basename = COMMON)),
+  ];
+
+  Combine(pipeline).pipe(dest(PATH_TO_DIST)).on("end", cb);
+}
+
+function css(cb) {
+  const pipeline = [
+    src(`${PATH_TO_DATA}/static/css/main.css`),
+    cleanCSS({ compatibility: "ie8" }),
+    rename((p) => (p.basename = COMMON)),
   ];
 
   Combine(pipeline).pipe(dest(PATH_TO_DIST)).on("end", cb);
@@ -62,7 +62,8 @@ function images(cb) {
 
 const getAssets = parallel(
   series(renderMarkdown, markdownToHtml),
-  jscss,
+  js,
+  css,
   images
 );
 

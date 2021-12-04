@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"no test here\"",
     "gulp-assets": "gulp --gulpfile ./gulp/gulpfile.js",
-    "clear": "rm -rf md-dist dist"
+    "clear": "rm -rf md-dist dist",
+    "gulp": "gulp --gulpfile ./gulp/gulpfile.js",
+    "nodemon": "nodemon"
   },
   "repository": {
     "type": "git",
@@ -22,12 +24,14 @@
     "css-loader": "^6.5.1",
     "del": "^6.0.0",
     "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.3.0",
     "gulp-markdown": "^6.0.0",
     "gulp-mustache": "^5.0.0",
     "gulp-prettier": "^4.0.0",
     "gulp-rename": "^2.0.0",
     "mini-css-extract-plugin": "^2.4.4",
     "mustache": "^4.2.0",
+    "nodemon": "^2.0.15",
     "stream-combiner2": "^1.1.1",
     "style-loader": "^3.3.1",
     "webpack-stream": "^7.0.0"

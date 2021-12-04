@@ -1,0 +1,6 @@
+@media (prefers-color-scheme: dark) {
+  :root {
+    --back-color: #000000;
+    --font-color: #ffffff;
+  }
+}

@@ -25,6 +25,8 @@
     "del": "^6.0.0",
     "gulp": "^4.0.2",
     "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-flatten": "^0.4.0",
     "gulp-markdown": "^6.0.0",
     "gulp-mustache": "^5.0.0",
     "gulp-prettier": "^4.0.0",

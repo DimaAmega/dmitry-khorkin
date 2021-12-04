@@ -10,7 +10,7 @@ fi
 NODE_ENV=production npm run gulp-assets
 git checkout gh-pages
 # rm all files
-ls | grep -v dist | xargs rm -rf
+ls | grep -v ^dist | xargs rm -rf
 # copy dist
 cp dist/* . && rm -rf dist
 # create commit and push

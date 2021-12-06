@@ -1,15 +1,12 @@
 /* fonts */
 @import url("https://fonts.googleapis.com/css2?family=Comfortaa&display=swap");
 /* custom */
-@import "./headers.css";
+@import "./components/headers.css";
 
 /* theme */
 @import "./themes/light.css";
 @import "./themes/dark.css";
-
-/* components */
-@import "../../components/greeting/greeting.css";
-@import "../../components/theme-switch/theme-switch.css";
+@import "./components/markdown.css";
 
 * {
   margin: 0;
@@ -21,26 +18,17 @@ body {
   background: var(--back-color);
   color: var(--font-color);
 }
-/* markdown */
-p,
-ul {
-  margin: 10px;
-  font-size: 24px;
-}
 
 .container {
   width: 73%;
   margin: 0 auto;
+  font-size: 24px;
 }
 
-/* links */
-a, a:focus, a:active {
-  text-decoration: none;
-  color: inherit;
+.container ul {
+  margin: 10px;
 }
-a:hover {
-  color: #2196f3;
-}
+
 /* media queries */
 @media (max-width: 750px) {
   .container {

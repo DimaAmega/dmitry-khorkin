@@ -21,7 +21,7 @@ body {
   background: var(--back-color);
   color: var(--font-color);
 }
-
+/* markdown */
 p,
 ul {
   margin: 10px;
@@ -33,8 +33,15 @@ ul {
   margin: 0 auto;
 }
 
+/* links */
+a, a:focus, a:active {
+  text-decoration: none;
+  color: inherit;
+}
+a:hover {
+  color: #2196f3;
+}
 /* media queries */
-
 @media (max-width: 750px) {
   .container {
     width: 90%;

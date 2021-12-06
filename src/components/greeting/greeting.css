@@ -1,3 +1,7 @@
+#greeting {
+  margin-top: 200px; 
+}
+
 #greeting img {
   display: block;
   margin: 0 auto; /* old school center haha */

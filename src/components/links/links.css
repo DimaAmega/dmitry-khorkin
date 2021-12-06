@@ -1,0 +1,18 @@
+#links li {
+  display: inline-block;
+  margin: 0 5px 0 5px;
+  height: 30px;
+  line-height: 30px;
+}
+
+#links ul {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#links img {
+  filter: invert(100%);
+  width: 30px;
+}

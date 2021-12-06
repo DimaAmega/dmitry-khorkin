@@ -1,3 +1,8 @@
 {
-    "baseUrl": "/dmitry-khorkin"
+    "baseUrl": "/dmitry-khorkin",
+    "links": {
+        "inst": "https://www.instagram.com/dmitrykhorkin/",
+        "vk": "https://vk.com/feed"
+    },
+    "year": 2021
 }

@@ -17,13 +17,12 @@ const [PATH_TO_DATA, PATH_TO_DIST, MD_DIST, IMAGES_FOLDER, COMMON, MODE] = [
   process.env.NODE_ENV ? process.env.NODE_ENV : "development",
 ];
 
-let data;
 if (MODE == "development") {
-  data = require("./data/local.json");
+  var data = require("./data/local.json");
 }
 
 if (MODE == "production") {
-  data = require("./data/prod.json");
+  var data = require("./data/prod.json");
 }
 
 function markdownToHtml(cb) {

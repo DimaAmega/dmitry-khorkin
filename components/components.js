@@ -1,0 +1,1 @@
+(()=>{const e=document.documentElement,t=document.querySelector("#theme-switch");let{matches:c}=window.matchMedia("(prefers-color-scheme: dark)");t.querySelector("input").checked=c,t.addEventListener("change",(()=>{c=!c,e.classList.toggle("dark-theme",c),e.classList.toggle("light-theme",!c)}))})();

@@ -12,7 +12,7 @@ git checkout gh-pages
 # rm all files
 ls | grep -v ^dist | xargs rm -rf
 # copy dist
-cp dist/* . && rm -rf dist
+cp -r dist/ . && rm -rf dist
 # create commit and push
 git add . && git commit -m "$1" && git push
 # return back

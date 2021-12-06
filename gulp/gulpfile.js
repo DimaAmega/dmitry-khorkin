@@ -7,8 +7,8 @@ const rename = require("gulp-rename");
 const Combine = require("stream-combiner2").obj;
 const webpack = require("webpack-stream");
 const cleanCSS = require("gulp-clean-css");
-const flatten = require("gulp-flatten");
 const concat = require("gulp-concat");
+const data = require("./data.json")
 
 const [PATH_TO_DATA, PATH_TO_DIST, MD_DIST, IMAGES_FOLDER, COMMON, MODE] = [
   "../src",
@@ -28,7 +28,7 @@ function markdownToHtml(cb) {
 function renderMarkdown(cb) {
   const pipeline = [
     src(`${PATH_TO_DATA}/**/*.mustache`),
-    mustache(),
+    mustache(data),
     rename((p) => (p.extname = ".md")),
   ];
 

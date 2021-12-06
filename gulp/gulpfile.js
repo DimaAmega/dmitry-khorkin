@@ -11,7 +11,7 @@ const flatten = require("gulp-flatten");
 const concat = require("gulp-concat");
 
 const [PATH_TO_DATA, PATH_TO_DIST, MD_DIST, IMAGES_FOLDER, COMMON, MODE] = [
-  "../src/data",
+  "../src",
   "../dist",
   "../md-dist",
   "images",

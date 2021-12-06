@@ -1,11 +1,11 @@
 /* fonts */
 @import url("https://fonts.googleapis.com/css2?family=Comfortaa&display=swap");
 /* custom */
-@import "../css/headers.css";
+@import "./headers.css";
 
 /* theme */
-@import "../css/themes/light.css";
-@import "../css/themes/dark.css";
+@import "./themes/light.css";
+@import "./themes/dark.css";
 
 /* components */
 @import "../../components/greeting/greeting.css";
@@ -17,6 +17,32 @@
 }
 
 body {
+  padding-top: 100px;
   background: var(--back-color);
   color: var(--font-color);
+}
+
+p,
+ul {
+  margin: 10px;
+  font-size: 24px;
+}
+
+.container {
+  width: 73%;
+  margin: 0 auto;
+}
+
+/* media queries */
+
+@media (max-width: 750px) {
+  .container {
+    width: 90%;
+  }
+}
+
+@media (max-width: 530px) {
+  .container {
+    width: 100%;
+  }
 }

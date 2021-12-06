@@ -20,14 +20,14 @@ const [PATH_TO_DATA, PATH_TO_DIST, MD_DIST, IMAGES_FOLDER, COMMON, MODE] = [
 ];
 
 function markdownToHtml(cb) {
-  const pipeline = [src(`${MD_DIST}/*.md`), markdown2html(), prettier()];
+  const pipeline = [src(`${MD_DIST}/**/*.md`), markdown2html(), prettier()];
 
   Combine(pipeline).pipe(dest(PATH_TO_DIST)).on("end", cb);
 }
 
 function renderMarkdown(cb) {
   const pipeline = [
-    src(`${PATH_TO_DATA}/*.mustache`),
+    src(`${PATH_TO_DATA}/**/*.mustache`),
     mustache(),
     rename((p) => (p.extname = ".md")),
   ];

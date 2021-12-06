@@ -8,8 +8,6 @@ const Combine = require("stream-combiner2").obj;
 const webpack = require("webpack-stream");
 const cleanCSS = require("gulp-clean-css");
 const concat = require("gulp-concat");
-const data = require("./data.json")
-
 const [PATH_TO_DATA, PATH_TO_DIST, MD_DIST, IMAGES_FOLDER, COMMON, MODE] = [
   "../src",
   "../dist",
@@ -18,6 +16,15 @@ const [PATH_TO_DATA, PATH_TO_DIST, MD_DIST, IMAGES_FOLDER, COMMON, MODE] = [
   "common",
   process.env.NODE_ENV ? process.env.NODE_ENV : "development",
 ];
+
+let data;
+if (MODE == "development") {
+  data = require("./data/local.json");
+}
+
+if (MODE == "production") {
+  data = require("./data/prod.json");
+}
 
 function markdownToHtml(cb) {
   const pipeline = [src(`${MD_DIST}/**/*.md`), markdown2html(), prettier()];

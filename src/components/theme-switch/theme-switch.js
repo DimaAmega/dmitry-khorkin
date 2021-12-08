@@ -1,5 +1,6 @@
 const root = document.documentElement;
 const theme_switch = document.querySelector("#theme-switch");
+const iconsImgs = document.querySelectorAll("#inst-icon,#vk-icon");
 const lsGet = (p) => localStorage.getItem(p);
 const lsSet = (k, v) => localStorage.setItem(k, v);
 
@@ -14,6 +15,7 @@ if (isDark == null)
 const showState = (isDark) => {
   root.classList.toggle("dark-theme", isDark);
   root.classList.toggle("light-theme", !isDark);
+  iconsImgs.forEach((e) => (e.style = `filter: invert(${isDark ? 1 : 0});`));
   lsSet("isDark", isDark);
 };
 
@@ -22,8 +24,12 @@ const changeHandler = () => {
   showState(isDark);
 };
 
-theme_switch.addEventListener("change", changeHandler);
+///////////////////////////
+//        MAIN
+///////////////////////////
 
-/* MAIN */
-theme_switch.querySelector("input").checked = isDark;
-showState(isDark);
+if (theme_switch) {
+  theme_switch.addEventListener("change", changeHandler);
+  theme_switch.querySelector("input").checked = isDark;
+  showState(isDark);
+}

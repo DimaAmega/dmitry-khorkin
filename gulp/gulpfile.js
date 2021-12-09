@@ -8,6 +8,8 @@ const Combine = require("stream-combiner2").obj;
 const webpack = require("webpack-stream");
 const cleanCSS = require("gulp-clean-css");
 const concat = require("gulp-concat");
+const { Transform } = require("stream");
+
 const [PATH_TO_DATA, PATH_TO_DIST, MD_DIST, IMAGES_FOLDER, COMMON, MODE] = [
   "../src",
   "../dist",
@@ -34,10 +36,6 @@ const createTask =
 ////////////////////////
 //       TASKS
 ///////////////////////
-
-// const readable = new stream.Readable();
-
-const { Transform } = require("stream");
 
 const renderMarkdown = createTask(
   { s: `${PATH_TO_DATA}/**/*.mustache`, d: MD_DIST },

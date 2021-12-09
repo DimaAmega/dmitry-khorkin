@@ -25,12 +25,6 @@ if (MODE == "production") {
   var data = require("./data/prod.json");
 }
 
-function markdownToHtml(cb) {
-  const pipeline = [src(`${MD_DIST}/**/*.md`), markdown2html(), prettier()];
-
-  Combine(pipeline).pipe(dest(PATH_TO_DIST)).on("end", cb);
-}
-
 function renderMarkdown(cb) {
   const pipeline = [
     src(`${PATH_TO_DATA}/**/*.mustache`),
@@ -39,6 +33,12 @@ function renderMarkdown(cb) {
   ];
 
   Combine(pipeline).pipe(dest(MD_DIST)).on("end", cb);
+}
+
+function markdownToHtml(cb) {
+  const pipeline = [src(`${MD_DIST}/**/*.md`), markdown2html(), prettier()];
+
+  Combine(pipeline).pipe(dest(PATH_TO_DIST)).on("end", cb);
 }
 
 function js(cb) {
@@ -59,13 +59,6 @@ function css(cb) {
   ];
 
   Combine(pipeline).pipe(dest(PATH_TO_DIST)).on("end", cb);
-}
-
-function images(cb) {
-  del.sync(`${PATH_TO_DIST}/${IMAGES_FOLDER}`, { force: true });
-  src(`${PATH_TO_DATA}/static/${IMAGES_FOLDER}/**/*`)
-    .pipe(dest(`${PATH_TO_DIST}/${IMAGES_FOLDER}`))
-    .on("end", cb);
 }
 
 function cssComponents(cb) {
@@ -89,6 +82,13 @@ function jsComponents(cb) {
 
   Combine(pipeline)
     .pipe(dest(`${PATH_TO_DIST}/components`))
+    .on("end", cb);
+}
+
+function images(cb) {
+  del.sync(`${PATH_TO_DIST}/${IMAGES_FOLDER}`, { force: true });
+  src(`${PATH_TO_DATA}/static/${IMAGES_FOLDER}/**/*`)
+    .pipe(dest(`${PATH_TO_DIST}/${IMAGES_FOLDER}`))
     .on("end", cb);
 }
 

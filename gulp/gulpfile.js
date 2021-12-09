@@ -25,71 +25,58 @@ if (MODE == "production") {
   var data = require("./data/prod.json");
 }
 
-function renderMarkdown(cb) {
-  const pipeline = [
-    src(`${PATH_TO_DATA}/**/*.mustache`),
-    mustache(data),
-    rename((p) => (p.extname = ".md")),
-  ];
+// haskell way
+const createTask =
+  ({ s, d }, ...pipes) =>
+  () =>
+    Combine(src(s), ...pipes, dest(d));
 
-  Combine(pipeline).pipe(dest(MD_DIST)).on("end", cb);
-}
+////////////////////////
+//       TASKS
+///////////////////////
 
-function markdownToHtml(cb) {
-  const pipeline = [src(`${MD_DIST}/**/*.md`), markdown2html(), prettier()];
+const renderMarkdown = createTask(
+  { s: `${PATH_TO_DATA}/**/*.mustache`, d: MD_DIST },
+  mustache(data),
+  rename((p) => (p.extname = ".md"))
+);
 
-  Combine(pipeline).pipe(dest(PATH_TO_DIST)).on("end", cb);
-}
+const markdownToHtml = createTask(
+  { s: `${MD_DIST}/**/*.md`, d: PATH_TO_DIST },
+  markdown2html(),
+  prettier()
+);
 
-function js(cb) {
-  const pipeline = [
-    src(`${PATH_TO_DATA}/static/js/main.js`),
-    webpack({ mode: MODE }),
-    rename((p) => (p.basename = COMMON)),
-  ];
+const js = createTask(
+  { s: `${PATH_TO_DATA}/static/js/main.js`, d: PATH_TO_DIST },
+  webpack({ mode: MODE }),
+  rename((p) => (p.basename = COMMON))
+);
 
-  Combine(pipeline).pipe(dest(PATH_TO_DIST)).on("end", cb);
-}
+const css = createTask(
+  { s: `${PATH_TO_DATA}/static/css/main.css`, d: PATH_TO_DIST },
+  cleanCSS({ compatibility: "ie8" }),
+  rename((p) => (p.basename = COMMON))
+);
 
-function css(cb) {
-  const pipeline = [
-    src(`${PATH_TO_DATA}/static/css/main.css`),
-    cleanCSS({ compatibility: "ie8" }),
-    rename((p) => (p.basename = COMMON)),
-  ];
+const cssComponents = createTask(
+  { s: `${PATH_TO_DATA}/components/**/*.css`, d: `${PATH_TO_DIST}/components` },
+  cleanCSS({ compatibility: "ie8" }),
+  concat("components.css", { newLine: "" })
+);
 
-  Combine(pipeline).pipe(dest(PATH_TO_DIST)).on("end", cb);
-}
+const jsComponents = createTask(
+  { s: `${PATH_TO_DATA}/components/**/*.js`, d: `${PATH_TO_DIST}/components` },
+  webpack({ mode: MODE }),
+  rename((p) => (p.basename = "components"))
+);
 
-function cssComponents(cb) {
-  const pipeline = [
-    src(`${PATH_TO_DATA}/components/**/*.css`),
-    cleanCSS({ compatibility: "ie8" }),
-    concat("components.css", { newLine: "" }),
-  ];
-
-  Combine(pipeline)
-    .pipe(dest(`${PATH_TO_DIST}/components`))
-    .on("end", cb);
-}
-
-function jsComponents(cb) {
-  const pipeline = [
-    src(`${PATH_TO_DATA}/components/*/*.js`),
-    webpack({ mode: MODE }),
-    rename((p) => (p.basename = "components")),
-  ];
-
-  Combine(pipeline)
-    .pipe(dest(`${PATH_TO_DIST}/components`))
-    .on("end", cb);
-}
-
-function images(cb) {
+function images() {
   del.sync(`${PATH_TO_DIST}/${IMAGES_FOLDER}`, { force: true });
-  src(`${PATH_TO_DATA}/static/${IMAGES_FOLDER}/**/*`)
-    .pipe(dest(`${PATH_TO_DIST}/${IMAGES_FOLDER}`))
-    .on("end", cb);
+
+  const s = src(`${PATH_TO_DATA}/static/${IMAGES_FOLDER}/**/*`);
+  const d = dest(`${PATH_TO_DIST}/${IMAGES_FOLDER}`);
+  return s.pipe(d);
 }
 
 const getAssets = parallel(

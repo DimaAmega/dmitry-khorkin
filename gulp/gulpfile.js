@@ -35,9 +35,32 @@ const createTask =
 //       TASKS
 ///////////////////////
 
+// const readable = new stream.Readable();
+
+const { Transform } = require("stream");
+
 const renderMarkdown = createTask(
   { s: `${PATH_TO_DATA}/**/*.mustache`, d: MD_DIST },
-  mustache(data),
+  // mustache(data),
+  new Transform({
+    objectMode: true,
+    transform(file, encoding, cb) {
+      // console.log(file.path);
+      // console.log(file.contents);
+      // console.log(file.contents.length);
+
+      // we can modify data here
+      const self = this;
+      const m = mustache(data);
+      m.write(file, encoding, () => {
+        // file to mustache
+        const d = m.read(file.contents.length);
+        // from mustache to next stream
+        self.push(d, encoding);
+        cb();
+      });
+    },
+  }),
   rename((p) => (p.extname = ".md"))
 );
 

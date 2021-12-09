@@ -1,6 +1,6 @@
 const root = document.documentElement;
 const theme_switch = document.querySelector("#theme-switch");
-const iconsImgs = document.querySelectorAll("#inst-icon,#vk-icon");
+const iconsImgs = document.querySelectorAll("#inst-icon,#vk-icon,#youtube-icon");
 const lsGet = (p) => localStorage.getItem(p);
 const lsSet = (k, v) => localStorage.setItem(k, v);
 

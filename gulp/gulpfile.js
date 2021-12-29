@@ -38,7 +38,7 @@ const createTask =
 const renderMarkdown = createTask(
   { s: `${PATH_TO_DATA}/**/*.mustache`, d: MD_DIST },
   mustache(data),
-  rename((p) => (p.extname = ".md"))
+  rename({ extname: ".md" })
 );
 
 const markdownToHtml = createTask(
@@ -50,13 +50,13 @@ const markdownToHtml = createTask(
 const js = createTask(
   { s: `${PATH_TO_DATA}/static/js/main.js`, d: PATH_TO_DIST },
   webpack({ mode: MODE }),
-  rename((p) => (p.basename = COMMON))
+  rename({ basename: COMMON })
 );
 
 const css = createTask(
   { s: `${PATH_TO_DATA}/static/css/main.css`, d: PATH_TO_DIST },
   cleanCSS({ compatibility: "ie8" }),
-  rename((p) => (p.basename = COMMON))
+  rename({ basename: COMMON })
 );
 
 const cssComponents = createTask(
@@ -68,7 +68,7 @@ const cssComponents = createTask(
 const jsComponents = createTask(
   { s: `${PATH_TO_DATA}/components/**/*.js`, d: `${PATH_TO_DIST}/components` },
   webpack({ mode: MODE }),
-  rename((p) => (p.basename = "components"))
+  rename({ basename: "components" })
 );
 
 function images() {

@@ -71,6 +71,10 @@ const jsComponents = createTask(
   rename({ basename: "components" })
 );
 
+const favicon = createTask(
+  { s: `${PATH_TO_DATA}/static/favicon.ico`, d: `${PATH_TO_DIST}` },
+);
+
 function images() {
   del.sync(`${PATH_TO_DIST}/${IMAGES_FOLDER}`, { force: true });
 
@@ -85,7 +89,8 @@ const getAssets = parallel(
   css,
   cssComponents,
   jsComponents,
-  images
+  images,
+  favicon
 );
 
 exports.default = series(getAssets);

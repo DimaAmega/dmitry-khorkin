@@ -7,12 +7,7 @@
         "youtube": "https://www.youtube.com/channel/UCBuzJ0ooAF3EAnR3WSU3aEg"
     },
     "blog": [
-        {"title": "title one", "image-location": "/images/ex1.png", "post-link": "/posts/post-one.html"},
-        {"title": "title two", "image-location": "/images/ex1.png", "post-link": "/posts/post-one.html"},
-        {"title": "title three", "image-location": "/images/ex1.png", "post-link": "/posts/post-one.html"},
-        {"title": "title four", "image-location": "/images/ex1.png", "post-link": "/posts/post-one.html"},
-        {"title": "title five", "image-location": "/images/ex1.png", "post-link": "/posts/post-one.html"},
-        {"title": "title six", "image-location": "/images/ex1.png", "post-link": "/posts/post-one.html"}
+        {"title": "О чем это все?", "image-location": "/images/hello-world.jpg", "post-link": "/posts/post-one.html"}
     ],
     "year": 2021
 }

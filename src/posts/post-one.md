@@ -1,46 +1,27 @@
-# 1s level head
+# О чем это все?
 
-## 2nd level head
+Приветствую всех, кто читает этот пост! Я наконец-то решил написать тут что-то! Собственно, как вы поняли из названия статьи, тут я постараюсь ответить на вопрос для чего же мне нужен блог, что и как я тут собрался писать.
 
-1st paragraph. Lorem ipsum dolor sit amet consectetur adipisicing elit. Error nisi
-labore perspiciatis placeat debitis! Voluptates animi hic vitae odit
-blanditiis delectus laboriosam totam nulla. Animi ea labore cum undeconsectetur adipisicing elit. Error nisi
-labore perspiciatis placeat debitis! Voluptates animi hic vitae odit
-blanditiis delectus laboriosam totam nulla. Animi ea labore cum undeconsectetur adipisicing elit. Error nisi
-labore perspiciatis placeat debitis! Voluptates animi hic vitae odit
-blanditiis delectus laboriosam totam nulla. Animi ea labore cum undeconsectetur adipisicing elit. Error nisi
-labore perspiciatis placeat debitis! Voluptates animi hic vitae odit
-blanditiis delectus laboriosam totam nulla. Animi ea labore cum undeconsectetur adipisicing elit. Error nisi
-labore perspiciatis placeat debitis! Voluptates animi hic vitae odit
-blanditiis delectus laboriosam totam nulla. Animi ea labore cum unde
-quod.
+<br>
 
-## 2nd level head
+Давным давно, в одной далекой галактике... Ладно ладно. ~~шутки в сторону)~~ Давайте знакомиться! Меня зовут Дима и если честно, то помимо скудного чувства юмора, которое будет пронизывать этот блог, я бы хотел делиться своими мыслями и творчеством с людьми, которым это интересно! 
 
-2nd paragraph. Lorem ipsum dolor sit amet consectetur adipconsectetur adipisicing elit. Error nisi
-labore perspiciatis placeat debitis! Voluptates animi hic vitae odit
-blanditiis delectus laboriosam totam nulla. Animi ea labore cum undeconsectetur adipisicing elit. Error nisi
-labore perspiciatis placeat debitis! Voluptates animi hic vitae odit
-blanditiis delectus laboriosam totam nulla. Animi ea labore cum undeconsectetur adipisicing elit. Error nisi
-labore perspiciatis placeat debitis! Voluptates animi hic vitae odit
-blanditiis delectus laboriosam totam nulla. Animi ea labore cum undeconsectetur adipisicing elit. Error nisi
-labore perspiciatis placeat debitis! Voluptates animi hic vitae odit
-blanditiis delectus laboriosam totam nulla. Animi ea labore cum undeconsectetur adipisicing elit. Error nisi
-labore perspiciatis placeat debitis! Voluptates animi hic vitae odit
-blanditiis delectus laboriosam totam nulla. Animi ea labore cum undeisicing elit. Error nisi
-labore perspiciatis placeat debitis! Voluptates animi hic vitae odit
-blanditiis delectus laboriosam totam nulla. Animi ea labore cum unde
-quod.
+На самом деле, есть много причин, почему сие действо на мой взгляд оправдано.
 
-## 2nd level head
+* Знакомство с новыми людьми
+* Взаимное обучение
+* Развитие личного бренда
+* Развитие навыка [сторителлинга](https://www.unisender.com/ru/support/about/glossary/chto-takoe-storitelling/)
+* Возможность делиться своим опытом в таком формате, в котором мне хочется это делать
+* Возможность делиться своим творчеством в таком формате, в котором мне хочется это делать
+* Возможность копировать и вставлять!
+* Поиск единомышленников (или врагов, кто знает, чем это все обернется)
+* ...
 
-blanditiis delectus laboriosam totam nulla. Animi ea labore cum undeconsectetur adipisicing elit. Error nisi
-labore perspiciatis placeat debitis! Voluptates animi hic vitae odit
-blanditiis delectus laboriosam totam nulla. Animi ea labore cum undeisicing elit. Error nisi
-labore perspiciatis placeat debitis! Voluptates animi hic vitae odit
-blanditiis delectus laboriosam totam nulla. Animi ea labore cum unde
-quod.
+Все это мне интересно, так что пристегните ремни!)
 
-* one
-* two
-* three list
+## О чем буду писать?
+Я, кажется, сильно любознательный человек) Мне очень интересно изучать как устроены вещи, поэтому я люблю учиться **в целом** (пока не наступили некоторые проблемы, о которых я обязательно расскажу)
+
+Интересуюсь программированием (web по большей части), музыкой (играю на гитаре, учусь играть на пианинке), немного психологией (ооочень спорное утверждение, ну да ладно), а еще мне нравятся жирафы!
+Об этом и планирую писать, так что если что-то из этого списка вам интересно (а даже если и нет), то welcome!

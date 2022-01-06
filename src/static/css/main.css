@@ -13,17 +13,13 @@
   padding: 0;
 }
 
-a,
-a:focus,
-a:active {
-  text-decoration: none;
-  color: inherit;
+a {
+  color: var(--font-color);
 }
 
 a:hover {
   color: #2196f3;
 }
-
 
 body {
   padding-top: 100px;

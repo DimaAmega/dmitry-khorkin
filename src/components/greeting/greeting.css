@@ -1,5 +1,5 @@
 #greeting {
-  margin-top: 200px; 
+  margin-top: 200px;
 }
 
 #greeting img {
@@ -15,5 +15,5 @@
 #greeting p {
   margin-top: 5px;
   text-align: center;
-  color: gray;
+  font-size: 40px;
 }

@@ -40,6 +40,9 @@
 .blog-content > div > a {
   z-index: 1;
   pointer-events: none;
+  background: var(--back-color);
+  border-radius: 5px;
+  padding: 5px;
 }
 
 .blog-content > div > div {

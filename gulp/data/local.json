@@ -7,7 +7,7 @@
         "youtube": "https://www.youtube.com/channel/UCBuzJ0ooAF3EAnR3WSU3aEg"
     },
     "blog": [
-        {"title": "О чем это все?", "image-location": "/images/hello-world.jpg", "post-link": "/posts/hello-world.html"}
+        {"title": "О чем это все?", "image-location": "/images/hello-world.jpg", "post-link": "/posts/hello-world"}
     ],
     "year": 2021
 }

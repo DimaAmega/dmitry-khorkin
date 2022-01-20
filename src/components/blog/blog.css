@@ -43,6 +43,7 @@
   background: var(--back-color);
   border-radius: 5px;
   padding: 5px;
+  text-align: center;
 }
 
 .blog-content > div > div {

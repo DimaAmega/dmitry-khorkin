@@ -39,9 +39,3 @@ body {
     width: 90%;
   }
 }
-
-@media (max-width: 530px) {
-  .container {
-    width: 100%;
-  }
-}

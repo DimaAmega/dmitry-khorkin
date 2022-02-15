@@ -1,13 +1,28 @@
 {
-    "html-title": "Dmitry Khorkin Local",
-    "baseUrl": "",
-    "links": {
-        "inst": "https://www.instagram.com/dkhrkn/",
-        "vk": "https://vk.com/kviz18",
-        "youtube": "https://www.youtube.com/channel/UCBuzJ0ooAF3EAnR3WSU3aEg"
+  "html-title": "Dmitry Khorkin Local",
+  "baseUrl": "",
+  "links": {
+    "inst": "https://www.instagram.com/dkhrkn/",
+    "vk": "https://vk.com/kviz18",
+    "youtube": "https://www.youtube.com/channel/UCBuzJ0ooAF3EAnR3WSU3aEg"
+  },
+  "blog": [
+    {
+      "title": "О чем это все?",
+      "image-location": "/images/hello-world.jpg",
+      "post-link": "/posts/hello-world"
     },
-    "blog": [
-        {"title": "О чем это все?", "image-location": "/images/hello-world.jpg", "post-link": "/blog/posts/hello-world"}
-    ],
-    "year": 2021
+    {
+      "title": "Эксперимент",
+      "image-location": "/images/knopki3.png",
+      "post-link": "/posts/help"
+    }
+  ],
+  "posts": {
+    "help": {
+      "linLink": "https://www.instagram.com/lilu_ppang/",
+      "imageLink": "/images/knopki3.png"
+    }
+  },
+  "year": 2022
 }

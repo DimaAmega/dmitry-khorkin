@@ -4,6 +4,33 @@ ul {
   font-size: 24px;
 }
 
+.markdown img {
+  margin: 0 auto;
+  display: block;
+  width: 90%;
+}
+
 .markdown ul {
   margin-left: 30px;
+}
+
+.markdown blockquote {
+  font-style: italic;
+  margin-left: 10px;
+  padding-left: 20px;
+  border-left: 9px solid var(--font-color);
+  box-sizing: border-box;
+}
+
+.markdown blockquote p {
+  font-size: 20px;
+}
+
+@media (max-width: 530px) {
+  .markdown p {
+    font-size: 20px;
+  }
+  .markdown blockquote p {
+    font-size: 15px;
+  }
 }

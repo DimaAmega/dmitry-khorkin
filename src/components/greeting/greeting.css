@@ -12,6 +12,10 @@
   box-shadow: var(--greeting-shadow-color) 0px 0px 30px -5px;
 }
 
+#greeting p a {
+  display: block;
+}
+
 #greeting p {
   margin-top: 5px;
   text-align: center;

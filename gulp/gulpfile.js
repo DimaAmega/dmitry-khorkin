@@ -92,6 +92,11 @@ const favicon = createTask({
   d: `${PATH_TO_DIST}`,
 });
 
+const pdfs = createTask({
+  s: `${PATH_TO_DATA}/static/*.pdf`,
+  d: `${PATH_TO_DIST}`,
+});
+
 const images = createTask({
   s: `${PATH_TO_DATA}/static/${IMAGES_FOLDER}/**/*`,
   d: `${PATH_TO_DIST}/${IMAGES_FOLDER}`,
@@ -104,7 +109,8 @@ const getAssets = parallel(
   cssComponents,
   jsComponents,
   images,
-  favicon
+  favicon,
+  pdfs
 );
 
 exports.default = series(getAssets);

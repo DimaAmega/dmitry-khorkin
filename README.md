@@ -1,3 +1,2 @@
 # dmitry-khorkin
-
-Немного позже я fork-ну этот репо и он будет выступать в качестве YET ANOTHER фреймворк для построения статических сайтов.
+[Welcome](https://dimaamega.github.io/dmitry-khorkin/)

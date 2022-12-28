@@ -26,9 +26,10 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: npm ci
-    - run: NODE_ENV=production npm run gulp-assets
-    - name: Deploy 🚀
+    - uses: pr-mpt/actions-commit-hash@v2
+      id: commit
+    - run: npm ci && NODE_ENV=production npm run gulp-assets
+    - name: Deploy 🚀 ${{steps.commit.outputs.short}}
       uses: JamesIves/github-pages-deploy-action@v4
       with:
         folder: dist

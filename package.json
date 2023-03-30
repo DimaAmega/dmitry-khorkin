@@ -8,7 +8,7 @@
     "gulp-assets": "gulp --gulpfile ./gulp/gulpfile.js",
     "clear": "rm -rf md-dist dist",
     "gulp": "gulp --gulpfile ./gulp/gulpfile.js",
-    "local-server": "browser-sync start --ws --server 'dist' --files 'dist' --port 5050",
+    "local-server": "browser-sync start -w -s dist",
     "nodemon": "nodemon"
   },
   "repository": {
@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/DimaAmega/dmitry-khorkin#readme",
   "devDependencies": {
-    "browser-sync": "~2.24.*",
+    "browser-sync": "^2.29.1",
     "css-loader": "^6.5.1",
     "del": "^6.0.0",
     "gulp": "^4.0.2",

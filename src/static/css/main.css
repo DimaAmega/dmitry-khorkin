@@ -25,7 +25,8 @@ body {
   padding-top: 100px;
   background: var(--back-color);
   color: var(--font-color);
-  transition: all 0.3s;
+  transition: color 0.3s;
+  transition: background 0.3s;
 }
 
 .container {

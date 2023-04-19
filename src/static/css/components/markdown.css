@@ -4,6 +4,28 @@ ul {
   font-size: 24px;
 }
 
+.markdown p {
+  margin-top: 30px;
+}
+
+.markdown details {
+  margin-top: 10px
+}
+
+.markdown details > p, .markdown details > summary {
+  font-style: italic;
+  font-size: 0.8em;
+}
+
+.markdown details > p {
+  padding: 10px;
+  border: 1px dashed var(--font-color);
+}
+
+.markdown summary:hover {
+  cursor: pointer;
+}
+
 .markdown img {
   margin: 0 auto;
   display: block;

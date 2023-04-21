@@ -8,6 +8,10 @@ ul {
   margin-top: 30px;
 }
 
+#theme-switch:has(input:not(:checked)) + .markdown * {
+  font-weight: bold;
+}
+
 .markdown details {
   margin-top: 10px
 }
@@ -49,7 +53,7 @@ ul {
 }
 
 @media (max-width: 530px) {
-  .markdown p {
+  .markdown p, .markdown ul {
     font-size: 20px;
   }
   .markdown blockquote p {

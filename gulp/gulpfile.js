@@ -46,8 +46,8 @@ const render2Markdown = createTask(
   rename({ extname: '.md' })
 )
 
-const markdownToHtml = createTask(
-  { taskName: 'markdownToHtml', s: `${MD_DIST}/**/*.md`, d: PATH_TO_DIST },
+const markdown2Html = createTask(
+  { taskName: 'markdown2Html', s: `${MD_DIST}/**/*.md`, d: PATH_TO_DIST },
   markdown2html(),
   prettier()
 )
@@ -104,7 +104,7 @@ const images = createTask({
 })
 
 const getAssets = parallel(
-  series(render2Markdown, markdownToHtml),
+  series(render2Markdown, markdown2Html),
   js,
   css,
   cssComponents,

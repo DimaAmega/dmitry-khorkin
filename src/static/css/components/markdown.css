@@ -1,6 +1,6 @@
 .markdown p,
 ul {
-  margin: 10px;
+  margin: 20px;
   font-size: 24px;
 }
 
@@ -50,6 +50,19 @@ ul {
 
 .markdown blockquote p {
   font-size: 20px;
+}
+
+.markdown h1 {
+  margin-bottom: 80px;
+}
+
+.markdown h1::after {
+  text-align: right;
+  font-size: 0.4em;
+  display: block;
+  content: attr(date);
+  font-style: italic;
+  color: gray;
 }
 
 @media (max-width: 530px) {

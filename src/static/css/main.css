@@ -41,3 +41,8 @@ body {
     width: 90%;
   }
 }
+
+::selection {
+  color: black;
+  background: rgba(22, 239, 254);
+}

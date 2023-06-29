@@ -30,16 +30,9 @@ body {
 }
 
 .container {
-  max-width: min(960px, 80%);
+  max-width: min(960px, 90%);
   margin: 0 auto;
   font-size: 24px;
-}
-
-/* media queries */
-@media (max-width: 750px) {
-  .container {
-    width: 90%;
-  }
 }
 
 ::selection {

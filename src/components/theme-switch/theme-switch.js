@@ -12,7 +12,7 @@ if (isDark == null)
   // don't set
   isDark = window.matchMedia('(prefers-color-scheme: dark)').matches
 
-const showState = (isDark) => {
+const setState = (isDark) => {
   root.classList.toggle('dark-theme', isDark)
   root.classList.toggle('light-theme', !isDark)
   iconsImgs.forEach((e) => (e.style = `filter: invert(${isDark ? 1 : 0});`))
@@ -21,7 +21,7 @@ const showState = (isDark) => {
 
 const changeHandler = () => {
   isDark = !isDark
-  showState(isDark)
+  setState(isDark)
 }
 
 ///////////////////////////
@@ -31,7 +31,7 @@ const changeHandler = () => {
 if (theme_switch) {
   theme_switch.addEventListener('change', changeHandler)
   theme_switch.querySelector('input').checked = isDark
-  showState(isDark)
+  setState(isDark)
 }
 
 const MAX_SCROLL = 800

@@ -30,7 +30,7 @@ body {
 }
 
 .container {
-  max-width: min(960px, 90%);
+  max-width: min(860px, 90%);
   margin: 0 auto;
   font-size: 24px;
 }

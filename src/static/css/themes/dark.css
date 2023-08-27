@@ -1,5 +1,5 @@
 .dark-theme {
-  --back-color: #000000;
-  --font-color: #ffffff;
+  --back-color: #0f1216;
+  --font-color: #b5bdcc;
   --greeting-shadow-color: var(--font-color);
 }
